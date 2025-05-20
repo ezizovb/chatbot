@@ -1,0 +1,137 @@
+@font-face {
+    font-family: Anonymous Pro;
+    src: url("../font/AnonymousPro-Regular.ttf");
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Anonymous Pro;
+    background: #121212;
+    color: #eee;
+  }
+  
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  #chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0px;
+    overflow: hidden;
+  }
+  
+  #chat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    scroll-behavior:smooth;
+    margin: 15px;
+    
+  }
+  #chat-box{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  #chat-box::-webkit-scrollbar{
+    display: none;
+  }
+  
+  #chat-box div {
+    font-size: 2.5vh;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s forwards;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    word-wrap: break-word;
+    line-height: 1.4em;
+  }
+  
+  .you {
+    align-self: flex-end;
+    color: greenyellow;
+    border-bottom-right-radius: 0;
+  }
+  
+  .kai {
+    align-self: flex-start;
+    color: magenta;
+    border-bottom-left-radius: 0;
+  }
+  
+  .errText {
+    font-size: 0.7vh;
+    color: darkred;
+  }
+  
+  .helpText {
+    font-size: 0.7vh;
+    color: blue;
+  }
+  
+  footer {
+    padding: 20px 0;
+    background: #0b0e14;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+  
+  .input_block {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  #input-area {
+    display: flex;
+  }
+  
+  #user-input {
+    flex: 1;
+    padding: 10px;
+    background: #0b0e14;
+    color: #fff;
+    border: none;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    outline: none;
+    font-size: 2vh;
+  }
+  
+  button {
+    padding: 12px 13px;
+    background: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  
+  button:hover {
+    background: #555;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 700px) {
+    #chat-box div {
+      font-size: 2vh;
+    }
+  }
