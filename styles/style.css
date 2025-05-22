@@ -1,6 +1,6 @@
 @font-face {
     font-family: Anonymous Pro;
-    src: url("../font/AnonymousPro-Regular.ttf");
+    src: url("../fonts/AnonymousPro-Regular.ttf");
   }
   
   html, body {
@@ -8,14 +8,19 @@
     padding: 0;
     height: 100%;
     font-family: Anonymous Pro;
-    background: #121212;
+    background: #0b0e14;
     color: #eee;
   }
   
+  :root{
+    --vh:1vh;
+  }
   #app {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    /* padding: 20px; */
+    background-color: #140f1d;
   }
   
   #chat-container {
@@ -27,8 +32,9 @@
     margin: 0 auto;
     padding: 20px 0px;
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
   }
-  
   #chat-box {
     flex: 1;
     display: flex;
@@ -38,7 +44,6 @@
     padding-bottom: 20px;
     scroll-behavior:smooth;
     margin: 15px;
-    
   }
   #chat-box{
     scrollbar-width: none;
@@ -110,17 +115,18 @@
     font-size: 2vh;
   }
   
-  button {
+  #btn_send {
+    display: none;
     padding: 12px 13px;
-    background: #444;
+    background: rgb(20, 20, 127);
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 12px;
   }
   
-  button:hover {
-    background: #555;
+  #btn_send:hover {
+    background: blue;
   }
   
   @keyframes fadeInUp {
@@ -134,4 +140,25 @@
     #chat-box div {
       font-size: 2vh;
     }
+  }
+  @media (max-width: 400px) {
+    #chat-box div {
+        font-size: 2vh;
+      }
+      #app {
+        padding: 5px;
+      }
+      
+      #chat-container {
+        margin: 0 auto;
+      }
+      #chat-box {
+        gap: 10px;
+        padding-bottom: 20px;
+        margin: 10px;
+        width: 100%;
+      }
+      #btn_send {
+        padding: 9px 10px;
+      }
   }
