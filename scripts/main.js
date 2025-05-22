@@ -71,6 +71,16 @@ document.addEventListener("keyup", function (event) {
   if (event.code === "Enter") {
     sendMessage();
   }
+  const inpElem = document.getElementById("user-input");
+  const sendBtn = document.getElementById("btn_send");
+  if (inpElem.value != "") {
+    sendBtn.style.display = "block";
+  }
+  if (event.code === "Backspace") {
+    if (inpElem.value === "") {
+      sendBtn.style.display = "none";
+    }
+  }
 });
 
 const animSearchPlaceholder = document.getElementById("user-input");
@@ -117,3 +127,11 @@ function type() {
   }
 }
 type();
+
+function setViewportHeight() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+window.addEventListener("resize", setViewportHeight);
+window.addEventListener("orientationchange", setViewportHeight); // для поворота дисп.
+setViewportHeight(); // start
