@@ -8,18 +8,47 @@
   <script src="scripts/main.js" defer></script>
 </head>
 <body>
-  <div id="app">
-    <div id="chat-container">
-      <div id="chat-box"></div>
-    </div>
-    <footer>
-      <div class="input_block">
-        <div id="input-area">
-          <input type="text" id="user-input" placeholder="ask something..." />
-          <button id="btn_send" onclick="sendMessage()">↑</button>
+  <div id="app" class="dark">
+    <main id="main">
+        <div class="header">
+            <!-- <div class="header_block_info"> -->
+                <div class="avatar">
+                    <img class="ava_img" src="img/logo.PNG" alt="">
+                </div>
+
+                <div class="name">
+                    <span>•</span> Kai (bot)
+                </div>
+            <!-- </div> -->
+<!-- --------------------------------------------- -->
+<div class="menu">
+    <div class="header_block_menu">
+
+        <div class="dropdown">
+            <button class="doted">
+                •••
+            </button>
+            <div class="dropdown-content">
+                <button class="btns theme_btn" onclick="toggleTheme()">Dark Mode</button>
+                <button class="btns clear_btn" onclick="clearHistory()">Clear history</button>
+            </div>
         </div>
+    </div>
+</div>            
+<!-- ------------------------------------------------- -->
+        </div>
+      <div id="chat-container">
+        <div id="chat-box"></div>
       </div>
-    </footer>
+      <footer>
+        <div class="input_block">
+          <div id="input-area">
+            <input type="text" id="user-input" placeholder="eMessage" />
+            <button class="send" onclick="sendMessage()">⬆</button>
+          </div>
+        </div>
+      </footer>
+    </main>
   </div>
 </body>
 </html>
